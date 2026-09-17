@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF4A5FB8</color>
+    <color name="primary_dark">#FF2C3E7A</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_container">#FFDCE3FF</color>
+    <color name="on_primary_container">#FF1B2A5E</color>
+    <color name="secondary">#FF6B4FA0</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+
+    <color name="surface">#FFF7F8FC</color>
+    <color name="surface_variant">#FFFFFFFF</color>
+    <color name="text_main">#FF1F2430</color>
+    <color name="text_sub">#FF6B7280</color>
+    <color name="divider">#FFE3E6EF</color>
+
+    <color name="state_ok">#FF2E7D32</color>
+    <color name="state_warn">#FFB26A00</color>
+    <color name="state_error">#FFC62828</color>
+
+    <color name="float_bg">#FF20242E</color>
+    <color name="float_bg_light">#FF2C3240</color>
+
+    <!-- APP 图标背景（配 logo：近白微绿） -->
+    <color name="ic_launcher_background">#FFF4F8EC</color>
+</resources>

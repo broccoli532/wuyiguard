@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- ========== 展开状态 ========== -->
+    <LinearLayout
+        android:id="@+id/expanded_panel"
+        android:layout_width="@dimen/float_panel_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_float_window"
+        android:orientation="vertical">
+
+        <!-- 标题栏：左侧可拖动，右侧关闭 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/drag_handle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="4dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="@dimen/float_title_logo"
+                    android:layout_height="@dimen/float_title_logo"
+                    android:contentDescription="@string/float_desc_guard"
+                    android:src="@drawable/ic_float_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/float_title"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 原来是关闭按钮，现在改成「缩小」：点击折叠成小图标，不退出 -->
+            <ImageButton
+                android:id="@+id/btn_collapse_float"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/float_desc_collapse"
+                android:src="@drawable/ic_collapse" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33FFFFFF" />
+
+        <!-- 两个开关 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+            <!-- 用原生 Switch：Service 上下文里最稳，不依赖 Material 主题解析 -->
+            <Switch
+                android:id="@+id/switch_na_yi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/float_na_yi_text"
+                android:textColor="#FFFFFFFF"
+                android:textSize="13.5sp" />
+
+            <Switch
+                android:id="@+id/switch_guo_tu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/float_guo_tu_text"
+                android:textColor="#FFFFFFFF"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/float_status_idle"
+                android:textColor="#FFB6BDCC"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_collapse_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="@string/float_collapse_hint"
+                android:textColor="#FF7C8494"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ========== 折叠状态（小图标）==========
+         大小在 res/values/dimens.xml 里改（float_collapsed_size / float_collapsed_logo） -->
+    <FrameLayout
+        android:id="@+id/collapsed_icon"
+        android:layout_width="@dimen/float_collapsed_size"
+        android:layout_height="@dimen/float_collapsed_size"
+        android:background="@drawable/bg_float_collapsed"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="@dimen/float_collapsed_logo"
+            android:layout_height="@dimen/float_collapsed_logo"
+            android:layout_gravity="center"
+            android:contentDescription="@string/float_desc_logo"
+            android:src="@drawable/ic_float_logo" />
+    </FrameLayout>
+
+</FrameLayout>

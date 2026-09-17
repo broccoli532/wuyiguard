@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================================================================
+         一、应用名 / 底部菜单 / 系统设置里显示的服务说明
+         改这里：改完重新编译即可，不需要动代码
+         ================================================================== -->
+    <string name="app_name">无翼守护</string>
+    <string name="nav_home">主界面</string>
+    <string name="nav_more">更多</string>
+    <string name="a11y_description">无翼守护需要无障碍服务以执行大退。</string>
+
+    <!-- ==================================================================
+         二、公告弹窗
+         注意：真正生效的正文在 AppConfig.ANNOUNCEMENT_BODY 里（AppConfig.kt），
+         下面这几个只是布局里的占位预览，改了看不到效果。
+         ================================================================== -->
+    <string name="announcement_placeholder_title">公告</string>
+    <string name="announcement_placeholder_body">公告内容</string>
+    <string name="announcement_placeholder_button">关闭</string>
+
+    <!-- ==================================================================
+         三、主界面 · 顶部状态总览
+         下面几条是代码根据授权状态自动选一条显示（HomeFragment.kt 的 refresh）
+         ================================================================== -->
+    <string name="home_summary_title">授权状态</string>
+    <string name="home_summary_checking">正在检查权限…</string>
+    <string name="home_summary_need_a11y">请先开启「无障碍服务」，否则软件无法正常运行。</string>
+    <string name="home_summary_need_overlay">请开启「悬浮窗」权限，否则无法显示控制开关。</string>
+    <string name="home_summary_need_battery">建议加入电池优化白名单，避免后台被系统清理。</string>
+    <string name="home_summary_need_capture">已具备运行条件。点「开启屏幕监测」后即可打开保护开关。</string>
+    <string name="home_summary_switch_off">监测中，保护开关均关闭。</string>
+    <string name="home_summary_running">运行中：屏幕监测已开启，保护已生效。</string>
+
+    <!-- ==================================================================
+         四、主界面 · 4 张权限卡片
+         ================================================================== -->
+
+    <!-- 卡片① 无障碍 -->
+    <string name="card_a11y_title">① 无障碍服务（必需）</string>
+    <string name="card_a11y_desc">触发保护时自动大退\n设置路径：无障碍 → 已下载的服务 → 无翼守护 → 打开</string>
+    <string name="card_a11y_button_off">去开启</string>
+    <string name="card_a11y_button_on">已开启 · 去设置</string>
+
+    <!-- 卡片② 悬浮窗 -->
+    <string name="card_overlay_title">② 悬浮窗 / 显示在应用上层（必需）</string>
+    <string name="card_overlay_desc">在其他应用上方显示悬浮窗。\nMIUI、ColorOS 等还需额外打开「后台弹出界面」权限。</string>
+    <string name="card_overlay_button_off">去开启</string>
+    <string name="card_overlay_button_on">已开启 · 去设置</string>
+
+    <!-- 卡片③ 电池优化 -->
+    <string name="card_battery_title">③ 电池优化白名单（建议）</string>
+    <string name="card_battery_desc">不加入白名单时，系统可能在锁屏一段时间后清理后台。\n设置路径：设置 → 应用 → 无翼守护 → 电池 → 选择「不限制 / 允许后台运行」。</string>
+    <string name="card_battery_button_off">去设置</string>
+    <string name="card_battery_button_on">已加入 · 去设置</string>
+
+    <!-- 卡片④ 屏幕采集 -->
+    <string name="card_capture_title">④ 屏幕采集（必需）</string>
+    <string name="card_capture_desc">Android 14 及以上单击即可；\nAndroid 9-13 开启录屏保护功能失效；\n设置路径：无障碍 → 已下载的服务 → 无翼守护 → 打开</string>
+    <string name="card_capture_button_off">去授权</string>
+    <string name="card_capture_button_on">重新授权</string>
+
+    <!-- 权限状态标签 -->
+    <string name="state_granted">已授权</string>
+    <string name="state_not_granted">未授权</string>
+    <string name="state_optional">未加入（建议）</string>
+
+    <!-- ==================================================================
+         五、主界面 · 运行控制区
+         ================================================================== -->
+    <string name="control_section_title">运行控制</string>
+
+    <!-- 两个条件开关（悬浮窗里也有同款，见第八节） -->
+    <string name="switch_na_yi_text">拿翼保护（进游戏前保持关闭）</string>
+    <string name="switch_guo_tu_text">过图保护（进游戏前保持关闭）</string>
+
+    <string name="btn_monitor_start">开启屏幕监测</string>
+    <string name="btn_monitor_stop">停止屏幕监测</string>
+    <string name="btn_float_open">打开悬浮窗</string>
+    <string name="btn_float_close">关闭悬浮窗</string>
+
+    <string name="debug_section_hint">测试</string>
+    <string name="btn_test_task">测试：大退</string>
+    <string name="btn_test_trigger">模拟一次捡翼</string>
+
+    <!-- ==================================================================
+         六、「更多」页 · 日志卡片
+         ================================================================== -->
+    <string name="more_log_title">运行日志</string>
+    <string name="more_log_path_label">日志目录：</string>
+    <string name="more_btn_refresh_log">刷新日志</string>
+    <string name="more_btn_crash_log">崩溃日志</string>
+    <string name="more_btn_export_log">导出日志</string>
+    <string name="more_log_empty">（暂无日志）</string>
+
+    <!-- ==================================================================
+         七、「更多」页 · 关于卡片
+         注意：版本那一行前半句是下面这条，具体版本号由 build.gradle.kts 的
+         versionName 自动生成（改版本去那里改，不是改这里）。
+         ================================================================== -->
+    <string name="more_rules_title">规则设置</string>
+    <string name="rule_keyword_hidden">已设置 {count} 个关键词（内容已隐藏）</string>
+    <string name="rule_keyword_none">尚未设置关键词</string>
+    <string name="rule_keyword_reveal">显示</string>
+    <string name="rule_keyword_hide">隐藏</string>
+    <string name="rule_keyword_tip">为避免误判，关键词默认打码显示，点「显示」可查看并编辑原文。\n多个关键词用中英文逗号或分号隔开</string>
+    <string name="rule_keyword">关键词设置</string>
+    <string name="rule_keyword_desc">识别到这些文字就触发清理；多个关键词用中英文逗号或分号隔开</string>
+    <string name="rule_keyword_hint">例如：更高更远,点击按钮获取,翼之光</string>
+    <string name="rule_sensitivity">黑白屏灵敏度调节</string>
+    <string name="rule_sensitivity_desc">「灵敏」会放宽判定并缩短判断时间，更容易触发</string>
+    <string name="rule_level_default">默认</string>
+    <string name="rule_level_sensitive">灵敏</string>
+    <string name="dialog_save">保存</string>
+    <string name="more_clear_settings_title">清理设置</string>
+    <string name="more_btn_export_run">导出运行日志</string>
+    <string name="more_btn_export_crash">导出崩溃日志</string>
+    <string name="more_about_source">开源地址：{url}</string>
+    <string name="more_about_source_url">https://github.com/broccoli532/wuyiguard</string>
+    <string name="toast_saved">已保存</string>
+    <string name="more_float_title">悬浮窗</string>
+    <string name="more_float_compact">小图标模式</string>
+    <string name="more_float_compact_desc">开启后折叠图标缩小，关闭为默认。</string>
+    <string name="fix_clear_title">清理修复</string>
+    <string name="fix_clear_desc">如果你的系统打开了备用清理按钮仍无法识别。用下面的方法帮助开发者适配。</string>
+    <string name="fix_clear_howto_title">步骤</string>
+    <string name="fix_clear_howto">1.手动打开最近任务界面，确保停留在那个画面；\n2.切回本窗口点「导出当前窗口节点树」，把生成的 nodetree_日期.txt 发给开发者。</string>
+    <string name="fix_clear_btn_dump">导出当前窗口节点树</string>
+    <string name="fix_clear_dump_hint">导出后可在wuyi_logs查看</string>
+    <string name="fix_clear_fallback">备用清理按钮</string>
+    <string name="fix_clear_fallback_desc">找不到清除按钮时，改为点击屏幕指定位置。开启后注意屏幕手势切换</string>
+    <string name="fix_clear_navbar">导航栏模式选择</string>
+    <string name="fix_clear_navbar_desc">关闭 = 全面屏手势；\n开启 = 三键导航栏。</string>
+    <string name="fix_clear_pos_label">当前位置：横 {x} / 纵 {y}</string>
+    <string name="more_about_title">关于</string>
+    <string name="more_about_version_placeholder">版本 -</string>
+    <string name="more_about_version_prefix">版本 v</string>
+    <string name="more_about_desc">贡献\n开发测试@西蓝花 @机米花\n\n鸣谢\n教程制作@Sky慕小美\n以及所有参与反馈和测试的伙伴们</string>
+
+    <!-- ==================================================================
+         八、悬浮窗
+         状态行是代码动态选的（FloatingWindowService.kt 的 statusLoop）
+         ================================================================== -->
+    <string name="float_title">无翼守护</string>
+    <string name="float_na_yi_text">拿翼保护</string>
+    <string name="float_guo_tu_text">过图保护</string>
+    <string name="float_status_idle">采集未启动</string>
+    <string name="float_status_running">监测中 · %1$dfps </string>
+    <string name="float_status_switch_off">采集中 · 开关未开</string>
+    <string name="float_status_ocr_mlkit">OCR</string>
+    <string name="float_status_ocr_node">节点取词(识别异常)</string>
+    <string name="float_collapse_hint">点击右上角或空白区域缩小</string>
+    <string name="float_desc_logo">无翼守护（点击展开，长按关闭）</string>
+    <string name="float_desc_guard">守护</string>
+    <string name="float_desc_collapse">缩小悬浮窗</string>
+    <string name="toast_float_closed_by_longpress">悬浮窗已关闭</string>
+
+    <!-- ==================================================================
+         九、Toast 提示语（操作后的短提示）
+         ================================================================== -->
+    <string name="toast_monitor_started">屏幕监测已开启</string>
+    <string name="toast_monitor_stopped">已停止屏幕监测</string>
+    <string name="toast_capture_denied">未授权屏幕采集，无法监测</string>
+    <string name="toast_float_opened">悬浮窗已打开（记得后台加锁）</string>
+    <string name="toast_float_closed">悬浮窗已关闭</string>
+    <string name="toast_need_overlay">请先授予悬浮窗权限</string>
+    <string name="toast_a11y_hint">找到「无翼守护」并打开开关</string>
+    <string name="toast_overlay_hint">打开「显示在应用上层」</string>
+    <string name="toast_battery_hint">选择「允许」/「不优化」</string>
+    <string name="toast_need_notification">请先允许通知权限，否则后台服务会被系统杀掉</string>
+    <string name="toast_need_a11y">请先开启无障碍服务</string>
+    <string name="toast_no_capture_support">系统不支持屏幕采集</string>
+    <string name="toast_test_ok">已执行：大退</string>
+    <string name="toast_test_fail">执行失败：请先开启无障碍服务</string>
+    <string name="toast_test_trigger">已模拟一次触发</string>
+    <string name="toast_switch_need_monitor">还需要点「开启屏幕监测」才会真正开始识别</string>
+    <string name="toast_capture_failed">采集未能启动！前往日志：更多 → 刷新日志 / 看崩溃日志</string>
+    <string name="toast_dump_ok">已导出到：{path}</string>
+    <string name="toast_dump_fail">导出失败，请检查无障碍服务是否已开启</string>
+    <string name="toast_fallback_on">已开启：请确认导航栏模式选择正确</string>
+    <string name="toast_launch_fail">启动失败：%1$s</string>
+    <string name="toast_export_empty">暂无日志文件</string>
+    <string name="toast_export_ok">已导出 %1$d 个日志文件到「下载」目录</string>
+    <string name="toast_export_fail">导出失败：%1$s</string>
+    <string name="toast_need_monitor_for_switch">请先在 App 主界面点「开启屏幕监测」</string>
+    <string name="toast_overlay_permission_denied">悬浮窗权限未授予</string>
+
+    <!-- 退出确认对话框 -->
+    <string name="dialog_exit_title">退出</string>
+    <string name="dialog_exit_message">退出后悬浮窗与屏幕监测仍会在后台运行。确定退出界面？</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_exit">退出</string>
+
+</resources>
