@@ -1,5 +1,5 @@
 
-# 无翼守护 / WuYiGuard1
+# 无翼守护 / WuYiGuard
 
 一个运行在 Android 设备本地的**屏幕文字监测与自动清理加速工具**。
 
